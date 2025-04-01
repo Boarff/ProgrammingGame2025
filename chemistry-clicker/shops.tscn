@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://j3r0ly14goq1"]
+
+[ext_resource type="Script" uid="uid://cvwfx37ifonwe" path="res://shops.gd" id="1_k00av"]
+
+[sub_resource type="Theme" id="Theme_k00av"]
+
+[sub_resource type="Theme" id="Theme_s3fj1"]
+default_font_size = 66
+/colors/a = Color(0, 0, 0, 1)
+
+[node name="Shops" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k00av")
+script = ExtResource("1_k00av")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 90.0
+color = Color(0.986752, 0.986752, 0.986752, 1)
+
+[node name="Protons" type="RichTextLabel" parent="."]
+self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.46
+anchor_bottom = 0.125
+offset_right = 8.20001
+theme = SubResource("Theme_s3fj1")
+text = "Protons:"
+
+[node name="ProtNum" type="RichTextLabel" parent="Protons"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.477
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.230988
+offset_bottom = 2.0
+theme = SubResource("Theme_s3fj1")
+text = "1.000e+0"
+
+[node name="Neutrons" type="RichTextLabel" parent="."]
+self_modulate = Color(0.332881, 0.332881, 0.332881, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.125
+offset_left = 620.0
+theme = SubResource("Theme_s3fj1")
+text = "Neutrons: "
+
+[node name="ProtNum2" type="RichTextLabel" parent="Neutrons"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 329.0
+offset_bottom = 2.0
+theme = SubResource("Theme_s3fj1")
+text = "1.000e+0"

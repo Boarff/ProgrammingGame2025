@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c01fsiab0vglh"]
+
+[ext_resource type="Texture2D" uid="uid://dxw66a7tgo7ku" path="res://Images/GameBackground.jpg" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://bfwchp25ejvcj" path="res://main.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://dye3s5exqibfq" path="res://clicker.tscn" id="3_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://j3r0ly14goq1" path="res://shops.tscn" id="4_fos0i"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uu6xs")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_glv2v")
+
+[node name="Clicker" parent="." instance=ExtResource("3_cm0pq")]
+
+[node name="Shops" parent="." instance=ExtResource("4_fos0i")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
