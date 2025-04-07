@@ -411,23 +411,15 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ib6r5")
 animation = &"Elements"
 
-[node name="Polygon2D" type="Polygon2D" parent="Clicker"]
-z_index = -1
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-88, -120, 88, -120, 88, 120, -88, 120)
-uv = PackedVector2Array(-88, -124, 86.6667, -126, 88.6667, 125.333, -88.6667, 125.333)
-
 [node name="Button" type="Button" parent="Clicker"]
-self_modulate = Color(0, 0, 0, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -83.0
-offset_top = -117.0
+offset_top = -118.0
 offset_right = -79.0
-offset_bottom = -113.0
+offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "HELLO THERE"
 
 [connection signal="button_down" from="Clicker/Button" to="." method="_on_button_button_down"]

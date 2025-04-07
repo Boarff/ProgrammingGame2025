@@ -2,7 +2,7 @@ extends Control
 # todo: Change to a file later
 var protonTotal = 0
 var neutronTotal = 0
-var elementProgress = 0
+var elementProgress = 1
 # nuclides
 var nuclidesDict = {
 	1: [0,1],
@@ -76,11 +76,17 @@ var nuclidesDict = {
 	69: 100,
 }
 
+@onready var protDisplay = $Protons/ProtNum
+@onready var neutDisplay = $Neutrons/NeutNum
+
 func _ready():
 	var clicker = get_node("/root/Main/Clicker")
 	clicker.click.connect(_on_clicker_click)
-	
+
+func _process(_delta):
+	protDisplay = str(protonTotal)
+	neutronTotal = str(neutronTotal)
 
 func _on_clicker_click():
+	protonTotal += elementProgress
 	neutronTotal += nuclidesDict[elementProgress].pick_random()
-	print(neutronTotal)

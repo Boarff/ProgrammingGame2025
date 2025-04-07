@@ -44,7 +44,7 @@ anchor_bottom = 1.0
 offset_left = 0.230988
 offset_bottom = 2.0
 theme = SubResource("Theme_s3fj1")
-text = "1.000e+0"
+text = "0"
 
 [node name="Neutrons" type="RichTextLabel" parent="."]
 self_modulate = Color(0.332881, 0.332881, 0.332881, 1)
@@ -56,7 +56,7 @@ offset_left = 620.0
 theme = SubResource("Theme_s3fj1")
 text = "Neutrons: "
 
-[node name="ProtNum2" type="RichTextLabel" parent="Neutrons"]
+[node name="NeutNum" type="RichTextLabel" parent="Neutrons"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -65,4 +65,4 @@ anchor_bottom = 1.0
 offset_left = 329.0
 offset_bottom = 2.0
 theme = SubResource("Theme_s3fj1")
-text = "1.000e+0"
+text = "0"
