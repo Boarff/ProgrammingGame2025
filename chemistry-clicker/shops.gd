@@ -83,10 +83,25 @@ func _ready():
 	var clicker = get_node("/root/Main/Clicker")
 	clicker.click.connect(_on_clicker_click)
 
-func _process(_delta):
-	protDisplay = str(protonTotal)
-	neutronTotal = str(neutronTotal)
+func _process(delta):
+	protDisplay.text = _as_scientific_string(protonTotal)
+	neutDisplay.text = _as_scientific_string(neutronTotal)
 
 func _on_clicker_click():
 	protonTotal += elementProgress
 	neutronTotal += nuclidesDict[elementProgress].pick_random()
+	
+
+func _as_scientific_string(number):
+	if number == 0:
+		return "0.0e+0"
+	else:
+		var negativeness = 1
+		if number < 0:
+			negativeness = -1
+			number = number * -1
+		var sigFig = 3
+		var length = int(floor( log(number) / log(10) ))
+		var decimal = round( number / (pow(10,length - sigFig)) ) / pow(10,sigFig)
+		
+		return (str(decimal*negativeness) + "e+" + str(length))
