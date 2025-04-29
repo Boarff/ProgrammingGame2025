@@ -1,0 +1,186 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8h2y4ip2y3wf"]
+
+[ext_resource type="Texture2D" uid="uid://b4vn4e21w5ioo" path="res://Images/Buttons/redButton.tres" id="1_pd2jm"]
+[ext_resource type="Texture2D" uid="uid://kiwrdyh4rltg" path="res://Images/Buttons/ButtonBorder.png" id="2_xyluh"]
+[ext_resource type="Texture2D" uid="uid://dpdvnd43pgqvp" path="res://Images/Buttons/blueButton.tres" id="3_jx8js"]
+
+[node name="Scroll" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 606.0
+offset_top = 96.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bones1" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones1"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones1"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("1_pd2jm")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones1"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
+
+[node name="Bones2" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones2"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("3_jx8js")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones2"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
+
+[node name="Bones3" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones3"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("1_pd2jm")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones3"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
+
+[node name="Bones4" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones4"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("3_jx8js")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones4"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
+
+[node name="Bones5" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones5"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones5"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("1_pd2jm")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones5"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
+
+[node name="Bones6" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
+
+[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones6"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+
+[node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones6"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+texture = ExtResource("3_jx8js")
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones6"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1

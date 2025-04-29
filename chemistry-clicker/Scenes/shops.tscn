@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://j3r0ly14goq1"]
+[gd_scene load_steps=5 format=3 uid="uid://j3r0ly14goq1"]
 
-[ext_resource type="Script" uid="uid://cvwfx37ifonwe" path="res://shops.gd" id="1_k00av"]
+[ext_resource type="Script" uid="uid://cvwfx37ifonwe" path="res://Scenes/shops.gd" id="1_k00av"]
+[ext_resource type="PackedScene" uid="uid://b8h2y4ip2y3wf" path="res://Scenes/scroll.tscn" id="2_5weqt"]
 
 [sub_resource type="Theme" id="Theme_k00av"]
 
@@ -24,28 +25,14 @@ offset_left = 597.0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_left = 611.0
-offset_top = 96.0
-offset_right = 1266.0
-offset_bottom = 708.0
-
-[node name="VScrollBar" type="VScrollBar" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VScrollBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 90.0
 color = Color(0.9673, 0.879337, 0.822695, 1)
+
+[node name="Scroll" parent="." instance=ExtResource("2_5weqt")]
+layout_mode = 1
 
 [node name="Protons" type="RichTextLabel" parent="."]
 self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
