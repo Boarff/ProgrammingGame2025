@@ -1,13 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://j3r0ly14goq1"]
+[gd_scene load_steps=9 format=3 uid="uid://j3r0ly14goq1"]
 
 [ext_resource type="Script" uid="uid://cvwfx37ifonwe" path="res://Scenes/shops.gd" id="1_k00av"]
 [ext_resource type="PackedScene" uid="uid://b8h2y4ip2y3wf" path="res://Scenes/scroll.tscn" id="2_5weqt"]
 
 [sub_resource type="Theme" id="Theme_k00av"]
 
+[sub_resource type="Gradient" id="Gradient_5weqt"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.48494)
+colors = PackedColorArray(0.438895, 0, 0.0809596, 1, 0.896103, 0.889858, 0.954057, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8upwa"]
+gradient = SubResource("Gradient_5weqt")
+
 [sub_resource type="Theme" id="Theme_s3fj1"]
 default_font_size = 66
 /colors/a = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_5weqt"]
+default_font_size = 45
+
+[sub_resource type="Theme" id="Theme_8upwa"]
+default_font_size = 50
 
 [node name="Shops" type="Control"]
 layout_mode = 3
@@ -19,13 +33,24 @@ grow_vertical = 2
 theme = SubResource("Theme_k00av")
 script = ExtResource("1_k00av")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ProductionBackdrop" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 568.0
+offset_right = 855.0
+offset_bottom = 1167.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_8upwa")
+
+[node name="ScrollBackground" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 597.0
+offset_top = 16.0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="NumberBackground" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 90.0
@@ -33,6 +58,8 @@ color = Color(0.9673, 0.879337, 0.822695, 1)
 
 [node name="Scroll" parent="." instance=ExtResource("2_5weqt")]
 layout_mode = 1
+offset_top = 90.0
+offset_bottom = 0.0
 
 [node name="Protons" type="RichTextLabel" parent="."]
 self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
@@ -75,4 +102,57 @@ anchor_bottom = 1.0
 offset_left = 329.0
 offset_bottom = 2.0
 theme = SubResource("Theme_s3fj1")
+text = "0"
+
+[node name="EpClick" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.46
+anchor_bottom = 0.125
+offset_left = 4.0
+offset_top = 571.0
+offset_right = 8.20001
+offset_bottom = 559.75
+theme = SubResource("Theme_5weqt")
+text = "Elements per click:"
+
+[node name="EpCNum" type="RichTextLabel" parent="EpClick"]
+self_modulate = Color(0.365135, 0.790146, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.477
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 123.139
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 2.0
+theme = SubResource("Theme_8upwa")
+text = "0"
+
+[node name="EpSecond" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.46
+anchor_bottom = 0.125
+offset_left = 4.0
+offset_top = 641.0
+offset_right = 8.20001
+offset_bottom = 629.75
+theme = SubResource("Theme_5weqt")
+text = "Elements per sec:"
+
+[node name="EpSNum" type="RichTextLabel" parent="EpSecond"]
+self_modulate = Color(0.762885, 0, 0.234319, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.477
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.139
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 2.25
+theme = SubResource("Theme_8upwa")
 text = "0"

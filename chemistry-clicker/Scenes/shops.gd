@@ -2,6 +2,9 @@ extends Control
 # todo: Change to a file later
 var protonTotal = 0
 var neutronTotal = 0
+
+signal click
+
 var elementProgress = 1
 # nuclides
 var nuclidesDict = {
@@ -83,7 +86,7 @@ func _ready():
 	var clicker = get_node("/root/Main/Clicker")
 	clicker.click.connect(_on_clicker_click)
 
-func _process(delta):
+func _process(_delta):
 	protDisplay.text = _as_scientific_string(protonTotal)
 	neutDisplay.text = _as_scientific_string(neutronTotal)
 
