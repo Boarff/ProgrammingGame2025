@@ -20,3 +20,8 @@ grow_vertical = 1
 [node name="Clicker" parent="." instance=ExtResource("3_cm0pq")]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_rgh2o")]
+
+[node name="debugTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="debugTimer" to="." method="_on_debug_timer_timeout"]

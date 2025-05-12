@@ -4,12 +4,10 @@
 [ext_resource type="Script" uid="uid://d1k2tqrdqriwk" path="res://Scenes/scroll.gd" id="1_xyluh"]
 [ext_resource type="Texture2D" uid="uid://kiwrdyh4rltg" path="res://Images/Buttons/ButtonBorder.png" id="2_xyluh"]
 [ext_resource type="Texture2D" uid="uid://dpdvnd43pgqvp" path="res://Images/Buttons/blueButton.tres" id="3_jx8js"]
+[ext_resource type="LabelSettings" uid="uid://c6nh44s1mxcj1" path="res://Images/Buttons/scrollTextTheming.tres" id="4_jx8js"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd2jm"]
-font_size = 75
-
-[sub_resource type="LabelSettings" id="LabelSettings_xyluh"]
-font_size = 30
+font_size = 34
 
 [node name="Scroll" type="Control"]
 layout_mode = 3
@@ -41,14 +39,6 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(663, 125)
 layout_mode = 2
 
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones1"]
-layout_mode = 2
-anchor_right = 0.747
-anchor_bottom = 0.96
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -0.261017
-
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones1"]
 layout_mode = 1
 anchors_preset = -1
@@ -77,10 +67,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones1"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -90,21 +80,36 @@ anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
 text = "Pattinson Process | + 1 EpS
-Cost:   1e+2 protons"
-label_settings = SubResource("LabelSettings_xyluh")
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Bones2" type="Control" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(663, 125)
-layout_mode = 2
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones1/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "1e+2 protons"
+label_settings = ExtResource("4_jx8js")
 
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones2"]
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones1"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchor_right = 0.747
 anchor_bottom = 0.96
 offset_left = 5.0
 offset_top = 5.0
 offset_right = -0.261017
+
+[node name="Bones2" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
 
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones2"]
 layout_mode = 1
@@ -132,10 +137,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones2"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -145,21 +150,36 @@ anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
 text = "Fire Refining | x1.05 EpC
-Cost:   1.5e+2 neutrons"
-label_settings = SubResource("LabelSettings_xyluh")
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Bones3" type="Control" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(663, 125)
-layout_mode = 2
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones2/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "1.5e+2 neutrons"
+label_settings = ExtResource("4_jx8js")
 
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones3"]
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones2"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchor_right = 0.747
 anchor_bottom = 0.96
 offset_left = 5.0
 offset_top = 5.0
 offset_right = -0.261017
+
+[node name="Bones3" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(663, 125)
+layout_mode = 2
 
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones3"]
 layout_mode = 0
@@ -185,10 +205,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones3"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -197,22 +217,37 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Parkes Process | + 100 EpS
-Cost:   5e+4 protons"
-label_settings = SubResource("LabelSettings_xyluh")
+text = "Parkes Process | + 1e+3 EpS
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
+
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones3/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "5e+4 protons"
+label_settings = ExtResource("4_jx8js")
+
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 0.747
+anchor_bottom = 0.96
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -0.261017
 
 [node name="Bones4" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(663, 125)
 layout_mode = 2
-
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones4"]
-layout_mode = 2
-anchor_right = 0.748
-anchor_bottom = 0.96
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 0.0759888
 
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones4"]
 layout_mode = 0
@@ -238,10 +273,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones4"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -251,22 +286,36 @@ anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
 text = "Electrolytic Refining | x1.5 EpC
-Cost:   7e+5 neutrons"
-label_settings = SubResource("LabelSettings_xyluh")
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
+
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones4/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "7e+5 neutrons"
+label_settings = ExtResource("4_jx8js")
+
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones4"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 0.748
+anchor_bottom = 0.96
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 0.0759888
 
 [node name="Bones5" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(663, 125)
 layout_mode = 2
-
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones5"]
-layout_mode = 2
-anchor_right = 0.75
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -0.250031
-offset_bottom = -5.0
 
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones5"]
 layout_mode = 0
@@ -292,10 +341,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones5"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones5"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -304,22 +353,38 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Koopman Process | + 1e+5 EpS
-Cost:   8.5e+7 protons"
-label_settings = SubResource("LabelSettings_xyluh")
+text = "Koopman Process | + 5e+6 EpS
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
+
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones5/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "8.5e+7 protons"
+label_settings = ExtResource("4_jx8js")
+
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones5"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -0.250031
+offset_bottom = -5.0
 
 [node name="Bones6" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(663, 125)
 layout_mode = 2
-
-[node name="Nervous System" type="Button" parent="ScrollContainer/VBoxContainer/Bones6"]
-layout_mode = 2
-anchor_right = 0.75
-anchor_bottom = 0.96
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -0.250031
 
 [node name="Entrails" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones6"]
 layout_mode = 0
@@ -345,10 +410,10 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -0.228027
 offset_right = -0.0440063
-text = "10"
+text = "0.0e+0"
 label_settings = SubResource("LabelSettings_pd2jm")
 
-[node name="Ear drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones6"]
+[node name="Ear_drums" type="Label" parent="ScrollContainer/VBoxContainer/Bones6"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.756
@@ -358,6 +423,36 @@ anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
 text = "Thermonuclear Refining | x5 EpC
-Cost:   5e+10 neutrons"
-label_settings = SubResource("LabelSettings_xyluh")
+Cost:   "
+label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
+
+[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones6/Ear_drums"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.411
+anchor_right = 0.986
+anchor_bottom = 0.888
+offset_left = 0.0339966
+offset_top = 2.023
+offset_right = -0.196045
+offset_bottom = 1.98399
+text = "5e+10 neutrons"
+label_settings = ExtResource("4_jx8js")
+
+[node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones6"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 0.75
+anchor_bottom = 0.96
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -0.250031
+
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones1/Nervous_System" to="." method="_on_bones_button_down_1"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones2/Nervous_System" to="." method="_on_bones_button_down_2"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones3/Nervous_System" to="." method="_on_bones_button_down_3"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones4/Nervous_System" to="." method="_on_bones_button_down_4"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones5/Nervous_System" to="." method="_on_bones_button_down_5"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Bones6/Nervous_System" to="." method="_on_bones_button_down_6"]
