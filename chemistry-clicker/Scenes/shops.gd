@@ -114,5 +114,7 @@ func _as_scientific_string(number):
 func _on_per_second_timeout() -> void:
 	#Main.protonTotal += Main.elementProgress * Main.elemPerSec
 	#Main.neutronTotal += nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
-	Main._numbers("add_to_proton", Main.elementProgress * Main.elemPerSec )
-	Main._numbers("add_to_neutron", nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec )
+	var addtoproton = Main.elementProgress * Main.elemPerSec
+	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
+	Main._numbers("add_to_proton", addtoproton )
+	Main._numbers("add_to_neutron", addtoneutron )

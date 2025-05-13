@@ -23,10 +23,19 @@ var protonMagnitude = 0
 var neutronMagnitude = 0
 
 func _numbers(switch, regularNumber = null, decimal = null, magnitude = null):
-	
+	#_debug()
 	if regularNumber != null:
-		magnitude = int( floor( log(regularNumber) / log(10) ) )
-		decimal = regularNumber/pow(10,magnitude)
+		if regularNumber == 0:
+			magnitude = 0
+			decimal = 0
+		else:
+			magnitude = int( floor( log(regularNumber) / log(10) ) )
+			decimal = regularNumber/pow(10,magnitude)
+		print("")
+		print("regularNumber conversion")
+		print(regularNumber)
+		print(magnitude)
+		print(decimal)
 	
 	match switch:
 		"set_proton":
@@ -43,11 +52,23 @@ func _numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 			return str(roundedDec) + "e+" + str(neutronMagnitude)
 		"add_to_proton":
 			if magnitude >= protonMagnitude:
-				protonDecimal += decimal * pow(10,magnitude - protonMagnitude)
+				protonDecimal = decimal + (protonDecimal / pow(10,magnitude - protonMagnitude))
+				print("")
+				print("protonDecMagBigger")
+				print(magnitude)
+				print(decimal)
+				print(protonMagnitude)
+				print(protonDecimal)
 			else:
 				protonDecimal += decimal * pow(10,protonMagnitude - magnitude)
+				print("")
+				print("protonDecMagSmaller")
+				print(magnitude)
+				print(decimal)
+				print(protonMagnitude)
+				print(protonDecimal)
 			
-			if protonDecimal > 1:
+			if protonDecimal < 1 && protonDecimal != 0:
 				protonMagnitude -= 1
 				protonDecimal *= 10
 			elif protonDecimal >= 10:
@@ -55,11 +76,11 @@ func _numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 				protonDecimal *= 0.1
 		"add_to_neutron":
 			if magnitude >= neutronMagnitude:
-				neutronDecimal += decimal * pow(10,magnitude - neutronMagnitude)
+				neutronDecimal = decimal + (neutronDecimal / pow(10,magnitude - neutronMagnitude))
 			else:
 				neutronDecimal += decimal * pow(10,neutronMagnitude - magnitude)
 			
-			if neutronDecimal > 1:
+			if neutronDecimal < 1 && neutronDecimal != 0:
 				neutronMagnitude -= 1
 				neutronDecimal *= 10
 			elif neutronDecimal >= 10:
@@ -89,10 +110,12 @@ func _numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 
 func _on_debug_timer_timeout() -> void:
 	time += 1
+	#_debug()
+	
+func _debug():
 	print("")
 	print(time)
 	print("protonDec " + str(protonDecimal))
 	print("protonMag " + str(protonMagnitude))
-	print("")
 	print("neutronDec " + str(neutronDecimal))
 	print("neutronMag " + str(neutronMagnitude))

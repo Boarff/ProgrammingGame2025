@@ -48,7 +48,7 @@ func _upgrade(index):
 		# Upgrades using protons for elements per second
 		0,2,4:
 			# check balance and remove used protons
-			if Main._numbers("bigger_than_proton",Main.upgradePrices[index]):
+			if !Main._numbers("bigger_than_proton",Main.upgradePrices[index]):
 			#if Main.protonTotal >= Main.upgradePrices[index]:
 				Main._numbers("add_to_proton", 0-Main.upgradePrices[index])
 				#Main.protonTotal -= Main.upgradePrices[index]
@@ -63,7 +63,7 @@ func _upgrade(index):
 			
 			# check balance and remove used neutrons
 			#if Main.neutronTotal >= Main.upgradePrices[index]:
-			if Main._numbers("bigger_than_neutron",Main.upgradePrices[index]):
+			if !Main._numbers("bigger_than_neutron",Main.upgradePrices[index]):
 				#Main.neutronTotal -= Main.upgradePrices[index]
 				Main._numbers("add_to_neutron", 0-Main.upgradePrices[index])
 				
