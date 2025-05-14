@@ -82,20 +82,22 @@ var nuclidesDict = {
 @onready var clicker = $"../Clicker"
 
 
-func _process(_delta):
-	#protDisplay.text = _as_scientific_string(Main.protonTotal)
-	#neutDisplay.text = _as_scientific_string(Main.neutronTotal)
+func _physics_process(delta: float) -> void:
+	
 	protDisplay.text = Main._numbers("get_proton_text")
 	neutDisplay.text = Main._numbers("get_neutron_text")
 	EpClick.text = _as_scientific_string(Main.elemPerClick)
 	EpSecond.text = _as_scientific_string(Main.elemPerSec)
 
 func _on_clicker_click():
-	#Main.protonTotal += Main.elementProgress * Main.elemPerClick
-	#Main.neutronTotal += nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerClick
-	Main._numbers("add_to_proton", Main.elementProgress * Main.elemPerClick)
-	Main._numbers("add_to_neutron", nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerClick )
+	#setting a variable to the amount ot add, so debugging is easy if needed
+	var addtoproton = Main.elementProgress * Main.elemPerClick
+	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerClick
+	# calling the function from the main script to change the numbers
+	Main._numbers("add_to_proton", addtoproton )
+	Main._numbers("add_to_neutron", addtoneutron )
 
+# function for converting regular numbers to strings in scientific form
 func _as_scientific_string(number):
 	if number == 0:
 		return "0.0e+0"
@@ -112,9 +114,9 @@ func _as_scientific_string(number):
 
 
 func _on_per_second_timeout() -> void:
-	#Main.protonTotal += Main.elementProgress * Main.elemPerSec
-	#Main.neutronTotal += nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
+	#setting a variable to the amount ot add, so debugging is easy if needed
 	var addtoproton = Main.elementProgress * Main.elemPerSec
 	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
+	# calling the function from the main script to change the numbers
 	Main._numbers("add_to_proton", addtoproton )
 	Main._numbers("add_to_neutron", addtoneutron )
