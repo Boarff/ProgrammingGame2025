@@ -75,35 +75,38 @@ func _numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 			if magnitude >= protonMagnitude:
 				# stored decimal set to added decimal + stored decimal adjusted to magnitude diff
 				protonDecimal = decimal + (protonDecimal / pow(10,magnitude - protonMagnitude))
+				protonMagnitude = magnitude
 			else:
 				# adds added dec, but adjusted to diff in magnitude
 				protonDecimal += decimal / pow(10,protonMagnitude - magnitude)
 			
-			if !(1<=protonDecimal || protonDecimal<10):
+			# if decimal is 0.9 or 10 or somthng
+			if (1>protonDecimal || protonDecimal>=10)&&(protonDecimal!=0):
+				# finds the magnitude of the decimal
 				var changedMag = floor(log(protonDecimal)/log(10))
-				if changedMag <=0:
-					changedMag -= 1
+				
+				#debugging
+				#print("")
+				#print(time)
+				#print("changedMag " + str(changedMag))
+				
+				# applies change to correct format
 				protonMagnitude += changedMag
 				protonDecimal /= pow(10,changedMag)
 			
-			#if protonDecimal < 1 && protonDecimal != 0:
-			#	protonMagnitude -= 1
-			#	protonDecimal *= 10
-			#elif protonDecimal >= 10:
-			#	protonMagnitude += 1
-			#	protonDecimal *= 0.1
 		"add_to_neutron":
 			if magnitude >= neutronMagnitude:
 				neutronDecimal = decimal + (neutronDecimal / pow(10,magnitude - neutronMagnitude))
+				neutronMagnitude = magnitude
 			else:
 				neutronDecimal += decimal / pow(10,neutronMagnitude - magnitude)
 			
-			if neutronDecimal < 1 && neutronDecimal != 0:
-				neutronMagnitude -= 1
-				neutronDecimal *= 10
-			elif neutronDecimal >= 10:
-				neutronMagnitude += 1
-				neutronDecimal *= 0.1
+			if (1>neutronDecimal || neutronDecimal>=10)&&(neutronDecimal!=0):
+				var changedMag = floor(log(neutronDecimal)/log(10))
+				
+				neutronMagnitude += changedMag
+				neutronDecimal /= pow(10,changedMag)
+		# compares inputted number to stored number
 		"smaller_than_proton":
 			if magnitude == protonMagnitude:
 				return decimal < protonDecimal
