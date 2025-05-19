@@ -7,7 +7,7 @@ extends Control
 
 # constants for easy changing of price increase or effects
 const costIncrease = 1.1
-const upgradeEffects = [1, 1.05, 1000, 1.5, 5000000, 5]
+const upgradeEffects = [1, 1.05, 100, 1.1, 100000, 2]
 
 # Function for changing the displayed costs.
 func _laceration_text_change(index, text):

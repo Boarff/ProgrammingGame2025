@@ -217,7 +217,7 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Parkes Process | + 1e+3 EpS
+text = "Parkes Process | + 1e+2 EpS
 Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
@@ -285,7 +285,7 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Electrolytic Refining | x1.5 EpC
+text = "Electrolytic Refining | x1.1 EpC
 Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
@@ -353,7 +353,7 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Koopman Process | + 5e+6 EpS
+text = "Koopman Process | + 1e+5 EpS
 Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
@@ -422,7 +422,7 @@ anchor_right = 0.988
 anchor_bottom = 0.936
 offset_left = -488.228
 offset_right = -156.044
-text = "Thermonuclear Refining | x5 EpC
+text = "Thermonuclear Refining | x2 EpC
 Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
