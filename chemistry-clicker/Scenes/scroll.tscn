@@ -51,13 +51,6 @@ offset_right = 652.696
 offset_bottom = 115.0
 texture = ExtResource("1_pd2jm")
 
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones1"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
-
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones1"]
 layout_mode = 1
 anchors_preset = -1
@@ -84,7 +77,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones1/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones1/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -97,6 +90,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "1e+2 protons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones1"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones1"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones1"]
 self_modulate = Color(1, 1, 1, 0)
@@ -120,13 +128,6 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 0.303955
 texture = ExtResource("3_jx8js")
-
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones2"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
 
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones2"]
 layout_mode = 1
@@ -154,7 +155,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones2/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones2/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -167,6 +168,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "1.5e+2 neutrons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones2"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones2"]
 self_modulate = Color(1, 1, 1, 0)
@@ -188,13 +204,6 @@ offset_top = 5.0
 offset_right = 658.0
 offset_bottom = 120.0
 texture = ExtResource("1_pd2jm")
-
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones3"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
 
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones3"]
 layout_mode = 1
@@ -222,7 +231,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones3/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones3/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -235,6 +244,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "5e+4 protons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones3"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones3"]
 self_modulate = Color(1, 1, 1, 0)
@@ -256,13 +280,6 @@ offset_top = 5.0
 offset_right = 658.0
 offset_bottom = 120.0
 texture = ExtResource("3_jx8js")
-
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones4"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
 
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones4"]
 layout_mode = 1
@@ -290,7 +307,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones4/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones4/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -303,6 +320,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "7e+5 neutrons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones4"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones4"]
 self_modulate = Color(1, 1, 1, 0)
@@ -324,13 +356,6 @@ offset_top = 5.0
 offset_right = 658.0
 offset_bottom = 120.0
 texture = ExtResource("1_pd2jm")
-
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones5"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
 
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones5"]
 layout_mode = 1
@@ -358,7 +383,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones5/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones5/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -371,6 +396,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "8.5e+7 protons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones5"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones5"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones5"]
 self_modulate = Color(1, 1, 1, 0)
@@ -393,13 +433,6 @@ offset_top = 5.0
 offset_right = 658.0
 offset_bottom = 120.0
 texture = ExtResource("3_jx8js")
-
-[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones6"]
-layout_mode = 0
-offset_right = 663.0
-offset_bottom = 125.0
-texture = ExtResource("2_xyluh")
-expand_mode = 1
 
 [node name="Stomach" type="Label" parent="ScrollContainer/VBoxContainer/Bones6"]
 layout_mode = 1
@@ -427,7 +460,7 @@ Cost:   "
 label_settings = ExtResource("4_jx8js")
 autowrap_mode = 2
 
-[node name="Laceration" type="Label" parent="ScrollContainer/VBoxContainer/Bones6/Ear_drums"]
+[node name="Tinnitus" type="Label" parent="ScrollContainer/VBoxContainer/Bones6/Ear_drums"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -440,6 +473,21 @@ offset_right = -0.196045
 offset_bottom = 1.98399
 text = "5e+10 neutrons"
 label_settings = ExtResource("4_jx8js")
+
+[node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones6"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 658.0
+offset_bottom = 120.0
+color = Color(0.270588, 0.270588, 0.270588, 0.607843)
+
+[node name="Skin" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bones6"]
+layout_mode = 0
+offset_right = 663.0
+offset_bottom = 125.0
+texture = ExtResource("2_xyluh")
+expand_mode = 1
 
 [node name="Nervous_System" type="Button" parent="ScrollContainer/VBoxContainer/Bones6"]
 self_modulate = Color(1, 1, 1, 0)

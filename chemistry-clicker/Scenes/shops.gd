@@ -82,7 +82,7 @@ var nuclidesDict = {
 @onready var clicker = $"../Clicker"
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	
 	protDisplay.text = Main._numbers("get_proton_text")
 	neutDisplay.text = Main._numbers("get_neutron_text")
@@ -117,10 +117,6 @@ func _on_per_second_timeout() -> void:
 	#setting a variable to the amount to add, so debugging is easy if needed
 	var addtoproton = Main.elementProgress * Main.elemPerSec
 	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
-	print("")
-	print(Main.time)
-	print("addtoproton " + str(addtoproton))
-	print("addtoneutron " + str(addtoneutron))
 	# calling the function from the main script to change the numbers
 	Main._numbers("add_to_proton", addtoproton )
 	Main._numbers("add_to_neutron", addtoneutron )

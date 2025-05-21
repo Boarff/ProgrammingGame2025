@@ -10,20 +10,20 @@ const costIncrease = 1.1
 const upgradeEffects = [1, 1.05, 100, 1.1, 100000, 2]
 
 # Function for changing the displayed costs.
-func _laceration_text_change(index, text):
+func _tinnitus_text_change(index, text):
 	match index:
 		0:
-			$ScrollContainer/VBoxContainer/Bones1/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones1/Ear_drums/Tinnitus.text = text
 		1:
-			$ScrollContainer/VBoxContainer/Bones2/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones2/Ear_drums/Tinnitus.text = text
 		2:
-			$ScrollContainer/VBoxContainer/Bones3/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones3/Ear_drums/Tinnitus.text = text
 		3:
-			$ScrollContainer/VBoxContainer/Bones4/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones4/Ear_drums/Tinnitus.text = text
 		4: 
-			$ScrollContainer/VBoxContainer/Bones5/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones5/Ear_drums/Tinnitus.text = text
 		5:
-			$ScrollContainer/VBoxContainer/Bones6/Ear_drums/Laceration.text = text
+			$ScrollContainer/VBoxContainer/Bones6/Ear_drums/Tinnitus.text = text
 
 # Function for changing the displayed total upgrades bought
 func _stomach_text_change(index, text):
@@ -40,6 +40,44 @@ func _stomach_text_change(index, text):
 			$ScrollContainer/VBoxContainer/Bones5/Stomach.text = text
 		5:
 			$ScrollContainer/VBoxContainer/Bones6/Stomach.text = text
+
+# checking if player has enough for upgrades for greying out
+func _process(delta: float) -> void:
+	# if upgrade price is smaller than number of protons, ungrey the box
+	if Main._numbers("smaller_than_proton", Main.upgradePrices[0]):
+		$ScrollContainer/VBoxContainer/Bones1/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones1/Hair.visible = true
+	
+	# if upgrade price is smaller than number of neutrons, ungrey the box
+	if Main._numbers("smaller_than_neutron", Main.upgradePrices[1]):
+		$ScrollContainer/VBoxContainer/Bones2/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones2/Hair.visible = true
+	
+	# if upgrade price is smaller than number of protons, ungrey the box
+	if Main._numbers("smaller_than_proton", Main.upgradePrices[2]):
+		$ScrollContainer/VBoxContainer/Bones3/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones3/Hair.visible = true
+	
+	# if upgrade price is smaller than number of neutrons, ungrey the box
+	if Main._numbers("smaller_than_neutron", Main.upgradePrices[3]):
+		$ScrollContainer/VBoxContainer/Bones4/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones4/Hair.visible = true
+	
+	# if upgrade price is smaller than number of protons, ungrey the box
+	if Main._numbers("smaller_than_proton", Main.upgradePrices[4]):
+		$ScrollContainer/VBoxContainer/Bones5/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones5/Hair.visible = true
+	
+	# if upgrade price is smaller than number of neutrons, ungrey the box
+	if Main._numbers("smaller_than_neutron", Main.upgradePrices[5]):
+		$ScrollContainer/VBoxContainer/Bones6/Hair.visible = false
+	else:
+		$ScrollContainer/VBoxContainer/Bones6/Hair.visible = true
 
 # Function to handle purchases of upgrades
 func _upgrade(index):
@@ -79,7 +117,7 @@ func upgradeManagement(index, text):
 	Main.upgradePrices[index] *= costIncrease
 	
 	# handles displayed price numbers
-	_laceration_text_change(index, Shops._as_scientific_string(Main.upgradePrices[index]) + text)
+	_tinnitus_text_change(index, Shops._as_scientific_string(Main.upgradePrices[index]) + text)
 	_stomach_text_change(index, Shops._as_scientific_string(Main.upgrades[index]))
 	
 	# adds to total upgrades
