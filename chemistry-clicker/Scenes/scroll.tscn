@@ -21,6 +21,7 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xyluh")
+metadata/_edit_horizontal_guides_ = [-34.0]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -88,7 +89,7 @@ offset_left = 0.0339966
 offset_top = 2.023
 offset_right = -0.196045
 offset_bottom = 1.98399
-text = "1e+2 protons"
+text = "1.0e+2 protons"
 label_settings = ExtResource("4_jx8js")
 
 [node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones1"]
@@ -242,7 +243,7 @@ offset_left = 0.0339966
 offset_top = 2.023
 offset_right = -0.196045
 offset_bottom = 1.98399
-text = "5e+4 protons"
+text = "5.0e+4 protons"
 label_settings = ExtResource("4_jx8js")
 
 [node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones3"]
@@ -318,7 +319,7 @@ offset_left = 0.0339966
 offset_top = 2.023
 offset_right = -0.196045
 offset_bottom = 1.98399
-text = "7e+5 neutrons"
+text = "7.0e+5 neutrons"
 label_settings = ExtResource("4_jx8js")
 
 [node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones4"]
@@ -471,7 +472,7 @@ offset_left = 0.0339966
 offset_top = 2.023
 offset_right = -0.196045
 offset_bottom = 1.98399
-text = "5e+10 neutrons"
+text = "5.0e+10 neutrons"
 label_settings = ExtResource("4_jx8js")
 
 [node name="Hair" type="ColorRect" parent="ScrollContainer/VBoxContainer/Bones6"]

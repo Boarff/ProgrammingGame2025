@@ -8,6 +8,8 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_rgh2o")]
+
 [node name="Shops" parent="." instance=ExtResource("4_fos0i")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -17,11 +19,61 @@ offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Clicker" parent="." instance=ExtResource("3_cm0pq")]
+[node name="Save" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 95.0
+offset_right = 134.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 35
+text = "Save"
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("4_rgh2o")]
+[node name="Load" type="Button" parent="."]
+offset_left = 466.0
+offset_top = 95.0
+offset_right = 593.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 35
+text = "Load"
+
+[node name="Clicker" parent="." instance=ExtResource("3_cm0pq")]
 
 [node name="debugTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="YouWin" type="Label" parent="."]
+visible = false
+offset_top = 131.0
+offset_right = 1241.0
+offset_bottom = 473.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.407843, 0, 1)
+theme_override_constants/shadow_offset_x = 25
+theme_override_constants/shadow_offset_y = 45
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 100
+theme_override_font_sizes/font_size = 250
+text = "YOU WIN!!"
+
+[node name="Attributions" type="Label" parent="YouWin"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 337.0
+offset_right = 1388.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 18
+text = "Element icons:
+https://elements.wlonk.com/ElementsTable.html
+
+Sparkle effect:
+https://www.vecteezy.com/png/15736810-3d-yellow-stars-sparkle-firework-decoration-twinkle-shiny-flash-glowing-light-effect-stars-and-bursts
+
+Background:
+https://wallpapers.com/wallpapers/doddle-chemistry-chemical-formulas-tuy5q0hvwki0yyli.html"
+
+[connection signal="button_down" from="Save" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Load" to="." method="_on_load_button_down"]
 [connection signal="timeout" from="debugTimer" to="." method="_on_debug_timer_timeout"]

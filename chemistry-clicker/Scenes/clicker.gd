@@ -1,22 +1,37 @@
 extends Node2D
 
+## Access to nodes
+@onready var Scroll = $"../Shops/Scroll"
 @onready var Shops = $"../Shops"
-@onready var particles = $GPUParticles2D
 
-var theta = 0
-var radius = 0
+## Variables for spawning sparkles
+var particles = preload("res://Scenes/particles.tscn")
+var spawnParticles
 
+## on scene load
+func _ready() -> void:
+	Scroll.gameWon.connect(_on_game_won)
+
+## despawns the scene
+func _on_game_won():
+	queue_free()
+
+##  Activates handling of number changes
+##  Spawns particles
 func _on_button_button_down() -> void:
-	Shops._on_clicker_click()
+	
+	# number change
+	Shops.on_clicker_click()
+	
+	# spawns particles
+	spawnParticles = particles.instantiate()
+	add_child(spawnParticles)
 
-func _animation_frame(frame):
-	if frame >= 70:
+## Changes the frame of animation for the clicker sprite
+func animation_frame(frame):
+	
+	# stops from exceeding 69
+	if frame > 69:
 		pass
 	else:
 		$Clicker.frame = frame
-
-func _process(delta):
-	theta += 100*delta
-	radius = 100 * (3*pow(sin(theta/13),2) + 2*pow(sin(theta),2))
-	
-	particles.position = radius * Vector2.from_angle(theta) + Vector2(300,360)

@@ -1,6 +1,10 @@
 extends Control
 
-# list of possible amount of neutrons each element can give
+## List of possible amount of neutrons each element can give.
+##
+## Index is number of neutrons in the atom;
+## returns array of possible neutrons;
+## not completely accurate to real life.
 var nuclidesDict = {
 	1: [0,1],
 	2: [1,2],
@@ -73,50 +77,67 @@ var nuclidesDict = {
 	69: [100,101],
 }
 
-# provides access to main node and text nodes
+## Provides access to nodes.
 @onready var Main = $".."
+@onready var clicker = $"../Clicker"
+@onready var Scroll = $Scroll
 @onready var protDisplay = $Protons/ProtNum
 @onready var neutDisplay = $Neutrons/NeutNum
 @onready var EpClick = $EpClick/EpCNum
 @onready var EpSecond = $EpSecond/EpSNum
-@onready var clicker = $"../Clicker"
 
+## on scene load
+func _ready() -> void:
+	Scroll.gameWon.connect(_on_game_won)
 
+## despawns the scene
+func _on_game_won():
+	queue_free()
+
+## Every frame, adjusts the displayed numbers.
 func _process(delta: float) -> void:
-	
-	protDisplay.text = Main._numbers("get_proton_text")
-	neutDisplay.text = Main._numbers("get_neutron_text")
-	EpClick.text = _as_scientific_string(Main.elemPerClick)
-	EpSecond.text = _as_scientific_string(Main.elemPerSec)
+	protDisplay.text = Main.numbers("get_proton_text")
+	neutDisplay.text = Main.numbers("get_neutron_text")
+	EpClick.text = as_scientific_string(Main.elemPerClick)
+	EpSecond.text = as_scientific_string(Main.elemPerSec)
 
-func _on_clicker_click():
+## Adds to proton and neutron the amount a click should.
+func on_clicker_click():
+	
 	#setting a variable to the amount ot add, so debugging is easy if needed
 	var addtoproton = Main.elementProgress * Main.elemPerClick
 	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerClick
 	# calling the function from the main script to change the numbers
-	Main._numbers("add_to_proton", addtoproton )
-	Main._numbers("add_to_neutron", addtoneutron )
+	Main.numbers("add_to_proton", addtoproton )
+	Main.numbers("add_to_neutron", addtoneutron )
 
-# function for converting regular numbers to strings in scientific form
-func _as_scientific_string(number):
+## Input a normal number, get back a string in form:
+## 1.234e+5
+## 3 significant figures.
+func as_scientific_string(number):
+	
+	# can't handle zero
 	if number == 0:
 		return "0.0e+0"
 	else:
+		# can't handle negative numbers
 		var negativeness = 1
 		if number < 0:
 			negativeness = -1
 			number = number * -1
+		# rounds to x significant figures
 		var sigFig = 3
 		var length = int(floor( log(number) / log(10) ))
 		var decimal = round( number / (pow(10,length - sigFig)) ) / pow(10,sigFig)
 		
+		# returns the overall string
 		return (str(decimal*negativeness) + "e+" + str(length))
 
-
+## Every second, adds EpS * elementProgress to totals
 func _on_per_second_timeout() -> void:
 	#setting a variable to the amount to add, so debugging is easy if needed
 	var addtoproton = Main.elementProgress * Main.elemPerSec
 	var addtoneutron = nuclidesDict[int(Main.elementProgress)].pick_random() * Main.elemPerSec
 	# calling the function from the main script to change the numbers
-	Main._numbers("add_to_proton", addtoproton )
-	Main._numbers("add_to_neutron", addtoneutron )
+	Main.numbers("add_to_proton", addtoproton )
+	Main.numbers("add_to_neutron", addtoneutron )
