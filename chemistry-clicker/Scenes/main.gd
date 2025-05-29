@@ -161,10 +161,12 @@ func numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 				# adds added dec, but adjusted to diff in magnitude
 				protonDecimal += decimal / pow(10,protonMagnitude - magnitude)
 			
+			var roundedDecimal = round(protonDecimal*1000)/1000
+			
 			# if decimal is 0.9 or 10 or somthng
-			if (1>protonDecimal || round(protonDecimal)>=10)&&(protonDecimal!=0):
+			if (1>protonDecimal || roundedDecimal>=10)&&(protonDecimal!=0):
 				# finds the magnitude of the decimal
-				var changedMag = floor(log(protonDecimal)/log(10))
+				var changedMag = floor(log(roundedDecimal)/log(10))
 				
 				#debugging
 				#print("")
@@ -182,8 +184,10 @@ func numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 			else:
 				neutronDecimal += decimal / pow(10,neutronMagnitude - magnitude)
 			
-			if (1>neutronDecimal || round(neutronDecimal)>=10)&&(neutronDecimal!=0):
-				var changedMag = floor(log(neutronDecimal)/log(10))
+			var roundedDecimal = round(neutronDecimal*1000)/1000
+			
+			if (1>neutronDecimal || roundedDecimal>=10)&&(neutronDecimal!=0):
+				var changedMag = floor(log(roundedDecimal)/log(10))
 				
 				neutronMagnitude += changedMag
 				neutronDecimal /= pow(10,changedMag)
