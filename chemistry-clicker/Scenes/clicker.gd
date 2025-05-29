@@ -3,6 +3,7 @@ extends Node2D
 ## Access to nodes
 @onready var Scroll = $"../Shops/Scroll"
 @onready var Shops = $"../Shops"
+@onready var Background = $"../ParallaxBackground"
 
 ## Variables for spawning sparkles
 var particles = preload("res://Scenes/particles.tscn")
@@ -24,7 +25,10 @@ func _on_button_button_down() -> void:
 	Shops.on_clicker_click()
 	
 	# spawns particles
+	Background.spawn_particles()
+	
 	spawnParticles = particles.instantiate()
+	spawnParticles.behind = false
 	add_child(spawnParticles)
 
 ## Changes the frame of animation for the clicker sprite

@@ -146,10 +146,10 @@ func numbers(switch, regularNumber = null, decimal = null, magnitude = null):
 		"get_proton_text":
 			# x100, then round, then /100 for 2 decimal places (1.23)
 			var roundedDec = float(round(protonDecimal*100))/100
-			return str(roundedDec) + "e+" + str(protonMagnitude)
+			return str(roundedDec) + "e+" + str(int(round(protonMagnitude)))
 		"get_neutron_text":
 			var roundedDec = float(round(neutronDecimal*100))/100
-			return str(roundedDec) + "e+" + str(neutronMagnitude)
+			return str(roundedDec) + "e+" + str(int(round(neutronMagnitude)))
 		# adds the inputed number to the stored number
 		"add_to_proton":
 			# if magnitude of added number >= magnitude of stored number

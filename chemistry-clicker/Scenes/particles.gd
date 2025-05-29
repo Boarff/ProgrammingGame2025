@@ -4,13 +4,17 @@ extends Node2D
 var theta = randf() * 12 * PI
 var radius = 100 * (3*pow(sin(theta/13),2) + 2*pow(sin(theta),2))
 
+# exported variable to change scene before spawning
+@export var behind = true
+
 # providing access to particle spawner and main node
 @onready var particles = $GPUParticles2D
 @onready var Main = $"/root/Main"
 
 ## on startup, sets amount to progress and starts emitting
 func _ready() -> void:
-	particles.amount = Main.elementProgress
+	if behind:
+		particles.amount = Main.elementProgress
 	$GPUParticles2D.emitting = true
 
 
