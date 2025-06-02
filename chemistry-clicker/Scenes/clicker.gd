@@ -24,9 +24,10 @@ func _on_button_button_down() -> void:
 	# number change
 	Shops.on_clicker_click()
 	
-	# spawns particles
+	# spawns most particles behind
 	Background.spawn_particles()
 	
+	# spawns one particle in front
 	spawnParticles = particles.instantiate()
 	spawnParticles.behind = false
 	add_child(spawnParticles)

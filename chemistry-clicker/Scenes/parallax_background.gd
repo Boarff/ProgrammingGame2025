@@ -9,7 +9,8 @@ func _process(delta):
 	scroll_offset.x -= 45*delta
 	scroll_offset.y = 1000*sin(scroll_offset.x/1250)*cos(scroll_offset.x/900)
 
+## Creates particles from Background scene
 func spawn_particles():
-	
+	# instansiates and spawns particles
 	spawnParticles = particles.instantiate()
 	add_child(spawnParticles)

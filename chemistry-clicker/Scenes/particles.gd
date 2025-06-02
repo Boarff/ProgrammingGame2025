@@ -11,10 +11,12 @@ var radius = 100 * (3*pow(sin(theta/13),2) + 2*pow(sin(theta),2))
 @onready var particles = $GPUParticles2D
 @onready var Main = $"/root/Main"
 
-## on startup, sets amount to progress and starts emitting
+## on startup, sets amount to spawn and starts emitting
 func _ready() -> void:
+	# if particle scene is spawned as behind, spawns more particles according to element progress
 	if behind:
 		particles.amount = Main.elementProgress
+	# starts spawning
 	$GPUParticles2D.emitting = true
 
 
