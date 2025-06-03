@@ -18,7 +18,7 @@ default_font_size = 62
 /colors/a = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_5weqt"]
-default_font_size = 40
+default_font_size = 37
 
 [sub_resource type="Theme" id="Theme_8upwa"]
 default_font_size = 50
@@ -78,7 +78,7 @@ anchors_preset = -1
 anchor_left = 0.477
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.230988
+offset_left = -26.769
 offset_bottom = 2.0
 theme = SubResource("Theme_s3fj1")
 text = "0.0e+0"
@@ -99,7 +99,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 329.0
+offset_left = 306.0
 offset_bottom = 2.0
 theme = SubResource("Theme_s3fj1")
 text = "0.0e+0"
@@ -123,12 +123,12 @@ anchors_preset = -1
 anchor_left = 0.477
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 76.139
+offset_left = 53.139
 offset_top = -1.0
 offset_right = -1.0
 offset_bottom = 2.25
 theme = SubResource("Theme_8upwa")
-text = "0"
+text = "0.0e+0"
 
 [node name="EpSecond" type="RichTextLabel" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -150,12 +150,12 @@ anchors_preset = -1
 anchor_left = 0.477
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 63.139
+offset_left = 36.139
 offset_top = -1.0
 offset_right = -1.0
 offset_bottom = 2.25
 theme = SubResource("Theme_8upwa")
-text = "0"
+text = "0.0e+0"
 
 [node name="PerSecond" type="Timer" parent="."]
 autostart = true
